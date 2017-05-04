@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+		<title>Special Offers</title>
+	<link rel="stylesheet" type= "text/css" href="mystyle01.css">
+	<!--embedded style sheet for special offers table-->
+	<style>
+	#specialoffers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+	}
+	
+	#specialoffers td, #specialoffers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+	}
+
+	#specialoffers tr:nth-child(even){background-color: #f2f2f2;}
+
+	#specialoffers tr:hover {background-color: #ddd;}
+
+	#specialoffers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #7171da;
+    color: white;
+	}
+
+	.oldprice{
+	color: red;
+	text-decoration:line-through;
+	}
+	
+	.special{
+	font-size: large;
+	color: #cc0099;
+	}
+	
+	</style>
+	
+	<script>
+function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('clock').innerHTML =
+    h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);//refresh ever half a second, if you wanted it to change every second change to 1000
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+</script>
+	</head>
+
+	<body onload="startTime()">
+<div class="main">
+<!--------------HEADER--------->
+	<div class="header">
+				<!------ Start of animated banner---->
+		<div class="slideshow-container">
+
+<div class="mySlides fade">
+    <img src="../images/nightSky1.jpg" style="width:100%">
+  </div>
+
+<div class="mySlides fade">
+   <img src="../images/nightSky2.jpg" style="width:100%">
+ </div>
+
+<div class="mySlides fade">
+   <img src="../images/nightSky3.jpg" style="width:100%">
+ </div>
+ 
+ <div class="mySlides fade">
+   <img src="../images/nightSky4.jpg" style="width:100%">
+ </div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+  <span class="dot" onclick="currentSlide(4)"></span> 
+  <span class="dot" onclick="currentSlide(5)"></span> 
+  <span class="dot" onclick="currentSlide(6)"></span> 
+</div>
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex> slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 5000); // Change image every 5 seconds
+}
+</script>
+<!------ end of animated banner---->
+
+		<!--Inline styling used for company name-->
+		<h1  style="background-color: grey;color:white;width: 100%;text-align:center;font-size:200%;">CampusNaps</h1>
+		<!----show the clock------>
+		<div id="clock" style="position:relative;left:600px;top:-20px"><br></div>
+		</div>
+		<!--------Navagtion bar----------->
+			<div class="nav">
+				<ul class="menu">
+				<li><a href="index.html">Home</a></li>
+				<br>
+				<br>
+				<li><a href="about.html">About Us</a></li>
+				<br>
+				<br>
+				<li><a href="contact.php">Contact Information</a></li>
+				<br>
+				<br>
+				<li><a class="active" href="offers.html">Special Offers</a></li>
+				<br>
+				<br>
+				<li><a href="links.html">Useful Links</a></li>
+				<br>
+				<br>
+				<li><a href="adminAccessContact.php">Admin: Contact</a></li>
+				<br>
+				<br>
+				<li><a href="adminAccessProduct.php">Admin: Products</a></li>
+				<br>
+				<br>
+				</ul>
+				</div>
+				<!-----------Content-------------->
+			<div class="content" > <h1> <center>Special Offers</center></h1>
+					<table id="specialoffers">
+			`			<tr>
+							<th> Produce / Promotion</th>
+							<th> Description</th>
+							<th> Price &euro; </th>
+							<th>Image</th>
+						</tr>
+						<tr>
+							<td>Study Week Nap Slots!! </td>
+							<td> <p>To allow you to plan a head you can now pre book for the study week evening hours. <br> 
+							The slots are given for 1h intervals, with no more then 3 slots allowed per person per day.  </p></td>
+							<td> <p class=oldprice> &euro;9.50 per slot </p><br>
+									Prebooked slots &euro;7.50 per slot</td>
+							<td><div id="SWS"></div><img class="imgright" id="SWSlots" src="../images/keepCalmAndNap.jpg" onmouseover="document.getElementById('SWS').innerHTML= 'Do not loose sleep over a missed nap! <br> Book your slot quick! ';" onmouseout="document.getElementById('SWS').innerHTML='  ';" ></td>
+						</tr>
+						<tr>
+							<td>Sleep Masks</td>
+							<td> <p>There is nothing worse than not being able to sleep because it is too bright out. <br>
+							These animal eye masks are just what you need to help you get your daily nap and look fierce while doing so!</p>
+							</td>
+							<td> <p class=oldprice>&euro;6.95</p><br> now &euro;3.50</td>
+							<td><div id="SM"></div><img class="imgright" id="SleepMasks" src="../images/AnimalMasks.jpg" onmouseover="document.getElementById('SM').innerHTML= 'Go wild for these <br>Grrrrrrr-ate masks';" onmouseout="document.getElementById('SM').innerHTML='';"></td>
+						</tr>
+						<tr>
+							<td>Ear Plugs</td>
+							<td> <p>Does your house mate snore loudly? Maybe your roommate talks in their sleep.. If so we here at CampusNaps &copy; have you covered! <br> 
+							Fix all your problems with our top of the rang ear plugs. Get at set of three for half price!! <br>
+							(Offer applies while stock lasts) </p>
+							</td>
+							<td> <p class=oldprice>&euro;4 </p><br> Now only &euro;2 </td>
+							<td><div id="EP"></div><img class="imgright" id="EarPlugs" src="../images/EarPlugs.jpg" onmouseover="document.getElementById('EP').innerHTML= 'Be it for study or sleep these ear plugs have you covered!';" onmouseout="document.getElementById('EP').innerHTML='';"></td>
+						</tr>
+						<tr>
+							<td>Bean Bags</td>
+							<td> <p> Love our super comfy bean bags? Well now you can have a brand new one of your very one.<br>
+							To celebrate we are running a 33% off offer! Grab them while you can.
+							 </p>
+							</td>
+							<td> <p class=oldprice> &euro;120 </p><br> Now only &euro;80 </td>
+							<td><div id="BB"></div><img class="imgright" id="BeanBags" src="../images/BeanBags.jpg" onmouseover="document.getElementById('BB').innerHTML= '100% off the comfort for just 66% of the price!!';" onmouseout="document.getElementById('BB').innerHTML='';"></td>
+						</tr>
+						<tr>
+							<td>LAMZAC Air Sofa</td>
+							<td> <p> We have teamed up with the lovely people over at <a href="https://www.fatboy.com/ie/" target="_blank">FatBoy</a>
+							to offer you an amazing deal on their LAMZAC Air Sofa! Seen at festivals all over Ireland over the summer there are a must have item.<br>
+							You can now get your hands on one for only &euro;60! But act quick this offer is only while stocks lasts.</p></td>
+							<td> <p class=oldprice>&euro;80 </p><br> Now &euro;60	</td>
+							<td><div id="AS"></div><img class="imgright" title="LAMZACAirSofa" src="../images/LAMZACFatBoy.jpg" onmouseover="document.getElementById('AS').innerHTML= 'Being full of air has never been as comfy!!';" onmouseout="document.getElementById('AS').innerHTML='';"></td>
+						</tr>
+						<tr>
+							<td><h3 class="special"> Special Eddition </h3>HotWater Bottles</td>
+							<td> Wheither your curled up in bed or pulling a late one in college, 
+							these hotwater bottles will be your best friend. <br> 
+							With thier removable soft case they are easy to clean, and come in 4 different colours.<br>
+							Choose from White, Gray, Light Brown, and Dark Brown</p></td>
+							<td> Only &euro;6 </td>
+							<td><div id="HWB"></div><img class="imgright" title="HotWaterBottles" src="../images/HotWaterBottles.jpg" onmouseover="document.getElementById('HWB').innerHTML= 'Who needs a person to cuddle when you have one of these!! <br> plus hotwater bottels dont snore';" onmouseout="document.getElementById('HWB').innerHTML='';"></td>
+						</tr>
+					</table>
+					</div>
+			<!----------Footer----------------->
+			<div class="footer">
+				<br><br>CampusNaps&copy; Is a fictional company created as a learning aid for CT870.
+				All rights reserved. The content and opinions found on this site do not relfect those of NUIG. 
+			
+		</div>
+		</div>
+
+	</body>
+
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Useful Links</title>
+<link rel="stylesheet" type= "text/css" href="mystyle01.css"/>
+<script>
+function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('clock').innerHTML =
+    h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);//refresh ever half a second, if you wanted it to change every second change to 1000
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+</script>
+
+</head>
+
+<body onload="startTime()">
+
+<div class="main">
+<!--------------HEADER--------->
+		<div class="header">
+				<!------ Start of animated banner---->
+		<div class="slideshow-container">
+
+<div class="mySlides fade">
+    <img src="../images/nightSky1.jpg" style="width:100%">
+  </div>
+
+<div class="mySlides fade">
+   <img src="../images/nightSky2.jpg" style="width:100%">
+ </div>
+
+<div class="mySlides fade">
+   <img src="../images/nightSky3.jpg" style="width:100%">
+ </div>
+ 
+ <div class="mySlides fade">
+   <img src="../images/nightSky4.jpg" style="width:100%">
+ </div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+  <span class="dot" onclick="currentSlide(4)"></span> 
+  <span class="dot" onclick="currentSlide(5)"></span> 
+  <span class="dot" onclick="currentSlide(6)"></span> 
+</div>
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex> slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 5000); // Change image every 5 seconds
+}
+</script>
+<!------ end of animated banner---->
+
+		<!--Inline styling used for company name-->
+		<h1  style="background-color: grey;color:white;width: 100%;text-align:center;font-size:200%;">CampusNaps</h1>
+		<!----show the clock------>
+		<div id="clock" style="position:relative;left:600px;top:-20px"><br></div>
+		</div>
+			<!--------------Navagtion bar----------->
+			<div class="nav">
+				<ul class="menu">
+				<li><a href="index.html">Home</a></li>
+				<br>
+				<br>
+				<li><a href="about.html">About Us</a></li>
+				<br>
+				<br>
+				<li><a href="contact.php">Contact Information</a></li>
+				<br>
+				<br>
+				<li><a href="offers.html">Special Offers</a></li>
+				<br>
+				<br>
+				<li><a class="active" href="links.html">Useful Links</a></li>
+				<br>
+				<br>
+				<li><a href="adminAccessContact.php">Admin: Contact</a></li>
+				<br>
+				<br>
+				<li><a href="adminAccessProduct.php">Admin: Products</a></li>
+				<br>
+				<br>
+				</ul>
+				</div>
+				<!-----------Content-------------->
+				<div class="content">
+			<h1><center>Useful Links</center></h1>
+				<ul >
+				<li>Understand how to get the most out of a nap, with this artical from The Mayo Clinic.<br>
+				<a href="http://www.mayoclinic.org/healthy-lifestyle/adult-health/in-depth/napping/art-20048319" target="_blank">
+				Napping: Do's and don'ts for healthy adults</a></li>
+				<br>
+				<br>
+				<li>Learn the dangers of driving tired. Dont risk you life and the lives of others<br>
+				<a href="http://drowsydriving.org/about/" target="_blank">Drive Alive, Drive alert with drowsydriving.org</a></li>
+				<br>
+				<br>
+				<li>7 Steps to Getting Enough Sleep in College from CollegeLife<br>
+				<a href="http://collegelife.about.com/od/healthwellness/ht/How-To-Get-Enough-Sleep-In-College.htm" target="_blank"> 
+				How to Get Enough Sleep in College</a></li>
+				<br>
+				<br>
+				<li>This atrical by Campus Mind Works adress many of the FAQ students have when it comes to sleep.<br>
+				<a href="http://campusmindworks.org/students/self_care/sleep.asp" target="_blank">
+				The importace of sleep</a></li>
+				<br>
+				<br>
+				<li>"The consequences of sleep deprivation and daytime sleepiness are especially problematic to college students and can result in lower grade 
+				point averages, increased risk of academic failure, compromised learning, impaired mood, and increased risk of motor vehicle accidents.<br>
+				This article reviews the current prevalence of sleepiness and sleep deprivation among college students, contributing factors for sleep 
+				deprivation, and the role of sleep in learning and memory" <br>
+				<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4075951/" target="_blank">
+				Causes and consequences of sleepiness among college students By Shelley D Hershner and Ronald D Chervin</a></li>
+				<br><br><br>
+			</div>
+			<!----------Footer----------------->
+			<div class="footer">
+				<br><br>CampusNaps&copy; Is a fictional company created as a learning aid for CT870.
+				All rights reserved. The content and opinions found on this site do not relfect those of NUIG. 
+			
+		</div>
+		</div>
+</table>
+
+</body>
+
+</html>

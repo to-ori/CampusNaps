@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Home</title>
+	<link rel="stylesheet" type= "text/css" href="mystyle01.css">
+	
+<script>
+function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('clock').innerHTML =
+    h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);//refresh ever half a second, if you wanted it to change every second change to 1000
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+</script>
+	</head>
+
+
+	<body onload="startTime()">
+<div class="main">
+<!--------------HEADER--------->
+		<div class="header">
+		
+		<!------ Start of animated banner---->
+		<div class="slideshow-container">
+
+<div class="mySlides fade">
+    <img src="../images/nightSky1.jpg" style="width:100%">
+  </div>
+
+<div class="mySlides fade">
+   <img src="../images/nightSky2.jpg" style="width:100%">
+ </div>
+
+<div class="mySlides fade">
+   <img src="../images/nightSky3.jpg" style="width:100%">
+ </div>
+ 
+ <div class="mySlides fade">
+   <img src="../images/nightSky4.jpg" style="width:100%">
+ </div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+  <span class="dot" onclick="currentSlide(4)"></span> 
+  <span class="dot" onclick="currentSlide(5)"></span> 
+  <span class="dot" onclick="currentSlide(6)"></span> 
+</div>
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex> slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 5000); // Change image every half a 5 seconds
+}
+</script>
+<!------ end of animated banner---->
+
+		<!--Inline styling used for company name-->
+		<h1  style="background-color: grey;color:white;width: 100%;text-align:center;font-size:200%;">CampusNaps<br></h1>
+		<!----show the clock------>
+		<div id="clock" style="position:relative;left:600px;top:-20px"><br></div>
+		</div>
+			<!--------------Navagtion bar----------->
+			<div class="nav">
+				<ul class="menu">
+				<li><a class="active" href="index.html">Home</a></li>
+				<br>
+				<br>
+				<li><a href="about.html">About Us</a></li>
+				<br>
+				<br>
+				<li><a href="contact.php">Contact Information</a></li>
+				<br>
+				<br>
+				<li><a href="offers.html">Special Offers</a></li>
+				<br>
+				<br>
+				<li><a href="links.html">Useful Links</a></li>
+				<br>
+				<br>
+				<li><a href="adminAccessContact.php">Admin: Contact</a></li>
+				<br>
+				<br>
+				<li><a href="adminAccessProduct.php">Admin: Products</a></li>
+				<br>
+				<br>
+				</ul>
+				</div>
+				<!-----------Content-------------->
+				<div class="content">
+				<h1><center>Latest News</center></h1>
+				
+				
+							<h3> Later Opening hours anounced for Study Week</h3>
+							<p>To help all the stressed students out there we will be extending our Nap Space opening hours over the study week and exam period. 
+							<br>From the 28th November 2016 to the 15th December 2016 we will be open till the later time of 10pm. <br> 
+							If you would like to check out our prices or prebook a place just check pop over to our Special offers page, or <a href="offers.html">click here.</a> </p>
+							<br><br>
+							<h3> Wallet Found</h3>
+							<p>A wallet was handed into Nap Space on Friday the 14th Oct 2016.<br> For more information please email or call us. 
+							Our contact detail can be found <a href="contact.html" target="_blank">here</a></p>
+							<br> <br><img class="imgright"src="../images/LAMZACFatBoy.jpg">
+						<h3> Campus Nap&copy; teams up with FatBoy! </h3>
+						
+							<p>FatBoy has teamed up with us to provide the students of NUIG an amazing deal on their LAMZAC air sofa! <a href="offers.html">Click here </a> to find out more.</p>
+				
+							<br><br>
+						
+							<h3> Own your very own Campus Naps&copy; Bean Bag </h3>
+							
+							<p>You can now purchase your own bean bag chair through our site. Be as comfy at home as you are in the Nap Space! <br> For more information hop over to our Special offers page, or <a href="offers.html">click here.</a> </p>
+							
+						
+			</div>
+			<!----------Footer----------------->
+			<div class="footer">
+				<br><br>CampusNaps&copy; Is a fictional company created as a learning aid for CT870.
+				All rights reserved. The content and opinions found on this site do not relfect those of NUIG. 
+			
+		</div>
+		</div>
+
+	</body>
+
+</html>

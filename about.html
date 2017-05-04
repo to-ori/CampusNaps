@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+		<title>About Us</title>
+		<link rel="stylesheet" type= "text/css" href="mystyle01.css">
+<script>
+function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('clock').innerHTML =
+    h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);//refresh ever half a second, if you wanted it to change every second change to 1000
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+</script>
+	</head>
+
+	<body onload="startTime()">
+<div class="main">
+<!--------------HEADER--------->
+		<div class="header">
+				<!------ Start of animated banner---->
+		<div class="slideshow-container">
+
+<div class="mySlides fade">
+    <img src="../images/nightSky1.jpg" style="width:100%">
+  </div>
+
+<div class="mySlides fade">
+   <img src="../images/nightSky2.jpg" style="width:100%">
+ </div>
+
+<div class="mySlides fade">
+   <img src="../images/nightSky3.jpg" style="width:100%">
+ </div>
+ 
+ <div class="mySlides fade">
+   <img src="../images/nightSky4.jpg" style="width:100%">
+ </div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+  <span class="dot" onclick="currentSlide(4)"></span> 
+  <span class="dot" onclick="currentSlide(5)"></span> 
+  <span class="dot" onclick="currentSlide(6)"></span> 
+</div>
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex> slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 5000); // Change image every 5 seconds
+}
+</script>
+<!------ end of animated banner---->
+
+		<!--Inline styling used for company name-->
+		<h1  style="background-color: grey;color:white;width: 100%;text-align:center;font-size:200%;">CampusNaps</h1>
+		<!----show the clock------>
+		<div id="clock" style="position:relative;left:600px;top:-20px"><br></div>
+		</div>
+			<!--------------Navagtion bar----------->
+			<div class="nav">
+				<ul class="menu">
+				<li><a href="index.html">Home</a></li>
+				<br>
+				<br>
+				<li><a class="active" href="about.html">About Us</a></li>
+				<br>
+				<br>
+				<li><a href="contact.php">Contact Information</a></li>
+				<br>
+				<br>
+				<li><a href="offers.html">Special Offers</a></li>
+				<br>
+				<br>
+				<li><a href="links.html">Useful Links</a></li>
+				<br>
+				<br>
+				<li><a href="adminAccessContact.php">Admin: Contact</a></li>
+				<br>
+				<br>
+				<li><a href="adminAccessProduct.php">Admin: Products</a></li>
+				<br>
+				<br>
+				</ul>
+				</div>
+				<!-----------Content-------------->
+				<div class="content">
+				<h1><center>Campus Naps &copy;</center></h1><br><br>
+				
+				<p>Campus Naps&copy; is a company based in N.U.I. Galway.</p> <img class= "imgright" width="30%" src="../images/SleepingInBeanBag.jpg"> <p class="after">Not only can this allow students living nearby or commuting a place to rest up on long days but also aims help combat people driving home tired!  </p>
+				
+				<p>At Campus Naps&copy; we care about helping students insure they are getting the necessary abount of sleep needed so they can perform at their best while in university.</P>
+				<p>We operate both as an online shop that sells products related to sleeping and relaxing,such as ear plugs and hotwater bottles, and as an on campus nap service, <i>the Nap Space</i> where students can rent out a space to nap during the day. <br></p>
+				<p> 
+				
+					
+						<h3>Nap Space</h3> 	 <img class="imgright"  src="../images/LibraryBuilding.jpg">
+						The nap space is located in The James Hardiman Library, in GO404. 
+						<br>It contains bean bags, air sofas. There is always a member of staff onhand in the room to insure the safty of the users and thier belongings.
+						<br> </p>
+					
+				
+				<br>
+				<p  style="clear:right"> See our <a href="offers.html">Special Offers<a> page to keep up to date with our newest products and promotions.<br> If you have an issues or questions please conatct us through our <a href="contact.html">Contact page.</a> </p>
+				
+			</div>
+			<!----------Footer----------------->
+			<div class="footer">
+				<br><br>CampusNaps&copy; Is a fictional company created as a learning aid for CT870.
+				All rights reserved. The content and opinions found on this site do not relfect those of NUIG. 
+			
+		</div>
+		</div>
+
+		
+
+	</body>
+
+</html>
